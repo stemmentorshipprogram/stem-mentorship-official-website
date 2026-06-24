@@ -1,495 +1,809 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= lang==='ar' ? 'تفاصيل البرنامج' : 'Program Details' %> - Mentorship STEM</title>  <link rel="stylesheet" href="/css/style.css">
+  <title>
+    <%= lang==='ar' ? 'تفاصيل البرنامج' : 'Program Details' %> - Mentorship STEM
+  </title>
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/program.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
+
 <body>
   <%- include('partials/header', { lang: lang }) %>
-  
-  <section class="hero-banner program-banner">
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="hero-content" data-aos="fade-up">
-        <span class="hero-badge"><%= lang==='ar' ? 'خطتك للنجاح' : 'Your Path to Success' %></span>
-        <h1 class="gradient-text hero-title">
-          <%= lang==='ar' ? 'تفاصيل البرنامج' : 'Program Details' %>
-        </h1>
-        <p class="hero-subtitle">
-          <%= lang==='ar' ? 'نقدم منهجًا شاملاً يغطي جميع جوانب اختبارات القبول بمدارس STEM' : 'We offer a comprehensive curriculum covering all aspects of STEM school entrance exams' %>
-        </p>
-        <div class="hero-actions">
-          <a href="#components" class="btn btn-primary">
-            <i class="material-icons">list_alt</i>
-            <%= lang==='ar' ? 'مكونات البرنامج' : 'Program Components' %>
-          </a>
-          <a href="#schedule" class="btn btn-secondary">
-            <i class="material-icons">calendar_today</i>
-            <%= lang==='ar' ? 'الجدول الزمني' : 'Schedule' %>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <div class="container">
-    <div class="latex-box info-box" data-aos="fade-up">
-      <div class="box-header">
-        <i class="material-icons">info</i>
-        <h2><%= lang==='ar' ? 'عن البرنامج' : 'About the Program' %></h2>
-      </div>
-      <div class="box-content">
-        <p>
-          <%= lang==='ar' ? 
-            'برنامج STEM Mentorship هو برنامج متكامل مصمم خصيصاً لإعداد الطلاب لاختبارات القبول في مدارس STEM. يجمع البرنامج بين التدريب العملي، والدروس النظرية، والممارسة المستمرة تحت إشراف موجهين متخصصين في جميع المواد.' : 
-            'The STEM Mentorship program is an integrated program specifically designed to prepare students for STEM school entrance exams. The program combines hands-on training, theoretical lessons, and continuous practice under the supervision of specialized mentors in all subjects.' 
-          %>
-        </p>
-      </div>
-    </div>
-
-    <section id="components" class="program-components-section" data-aos="fade-up">
-      <div class="section-header latex-style">
-        <div class="theorem-box">
-          <div class="theorem-title">
-            <%= lang==='ar' ? 'مكونات البرنامج' : 'Program Components' %>
-          </div>
-          <p class="theorem-content">
-            <%= lang==='ar' ? 
-              'برنامجنا يتكون من عناصر متكاملة تضمن تجربة تعليمية شاملة' : 
-              'Our program consists of integrated elements ensuring a comprehensive learning experience' 
-            %>
+    <section class="hero-banner program-banner">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content" data-aos="fade-up">
+          <span class="hero-badge">
+            <%= lang==='ar' ? 'خطتك للنجاح' : 'Your Path to Success' %>
+          </span>
+          <h1 class="gradient-text hero-title">
+            <%= lang==='ar' ? 'تفاصيل البرنامج' : 'Program Details' %>
+          </h1>
+          <p class="hero-subtitle">
+            <%= lang==='ar' ? 'نقدم منهجًا شاملاً يغطي جميع جوانب اختبارات القبول بمدارس STEM'
+              : 'We offer a comprehensive curriculum covering all aspects of STEM school entrance exams' %>
           </p>
-        </div>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-card conceptbox" data-aos="fade-up">
-          <div class="stat-icon">
-            <span class="material-icons">assignment</span>
-          </div>
-          <h3><%= lang==='ar' ? 'نماذج أسبوعية' : 'Weekly Forms' %></h3>
-          <p><%= lang==='ar' ? 'محاكاة واقعية للاختبار لتعزيز ثقتك بنفسك وتقييم مستواك.' : 'Realistic test simulations to build your confidence and assess your level.' %></p>
-          <div class="stat-detail">
-            <%= lang==='ar' ? 'إعداد مستمر على نمط أسئلة الاختبار الحقيقي' : 'Continuous preparation based on real exam question patterns' %>
-          </div>
-        </div>
-
-        <div class="stat-card conceptbox" data-aos="fade-up" data-aos-delay="100">
-          <div class="stat-icon">
-            <span class="material-icons">video_library</span>
-          </div>
-          <h3><%= lang==='ar' ? 'مقاطع تعليمية' : 'Educational Clips' %></h3>
-          <p><%= lang==='ar' ? 'شرح مبسط للمفاهيم المعقدة بطريقة سهلة الفهم.' : 'Simplified explanations of complex concepts in an easy-to-understand way.' %></p>
-          <div class="stat-detail">
-            <%= lang==='ar' ? 'فيديوهات قصيرة ومركزة يمكن مشاهدتها في أي وقت' : 'Short, focused videos that can be watched anytime' %>
-          </div>
-        </div>
-
-        <div class="stat-card conceptbox" data-aos="fade-up" data-aos-delay="200">
-          <div class="stat-icon">
-            <span class="material-icons">groups</span>
-          </div>
-          <h3><%= lang==='ar' ? 'جلسات تفاعلية' : 'Interactive Sessions' %></h3>
-          <p><%= lang==='ar' ? 'تفاعل مباشر مع الموجهين للإجابة على استفساراتك.' : 'Direct interaction with mentors to answer your questions.' %></p>
-          <div class="stat-detail">
-            <%= lang==='ar' ? 'فرصة للمناقشة وطرح الأسئلة وتوضيح النقاط الصعبة' : 'Opportunity for discussion, asking questions and clarifying difficult points' %>
-          </div>
-        </div>
-
-        <div class="stat-card conceptbox" data-aos="fade-up" data-aos-delay="300">
-          <div class="stat-icon">
-            <span class="material-icons">auto_stories</span>
-          </div>
-          <h3><%= lang==='ar' ? 'مواد تعليمية' : 'Educational Materials' %></h3>
-          <p><%= lang==='ar' ? 'ملخصات شاملة وأوراق عمل لكل موضوع من موضوعات الاختبار.' : 'Comprehensive summaries and worksheets for each exam topic.' %></p>
-          <div class="stat-detail">
-            <%= lang==='ar' ? 'موارد عالية الجودة معدة خصيصاً لاختبارات STEM' : 'High-quality resources specially prepared for STEM exams' %>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="schedule" class="schedule-section" data-aos="fade-up">
-      <div class="theorem-box solution-box">
-        <div class="theorem-title">
-          <%= lang==='ar' ? 'الجدول الأسبوعي' : 'Weekly Schedule' %>
-        </div>
-        <div class="schedule-grid">
-          <div class="schedule-day" data-aos="fade-up">
-            <div class="day-header">
-              <span class="material-icons">event</span>
-              <h3><%= lang==='ar' ? 'الاثنين' : 'Monday' %></h3>
-            </div>
-            <div class="day-content">
-              <div class="schedule-card">
-                <span class="time-badge">4:00 - 6:00 PM</span>
-                <h4>IQ</h4>
-                <p><%= lang==='ar' ? 'تدريبات على اختبارات الذكاء والتفكير المنطقي' : 'IQ and logical thinking exercises' %></p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="schedule-day" data-aos="fade-up" data-aos-delay="100">
-            <div class="day-header">
-              <span class="material-icons">event</span>
-              <h3><%= lang==='ar' ? 'الأربعاء' : 'Wednesday' %></h3>
-            </div>
-            <div class="day-content">
-              <div class="schedule-card">
-                <span class="time-badge">4:00 - 6:30 PM</span>
-                <h4>Science</h4>
-                <p><%= lang==='ar' ? 'فيزياء، كيمياء، أحياء' : 'Physics, Chemistry, Biology' %></p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="schedule-day" data-aos="fade-up" data-aos-delay="200">
-            <div class="day-header">
-              <span class="material-icons">event</span>
-              <h3><%= lang==='ar' ? 'الخميس' : 'Thursday' %></h3>
-            </div>
-            <div class="day-content">
-              <div class="schedule-card">
-                <span class="time-badge">4:00 - 6:00 PM</span>
-                <h4>English</h4>
-                <p><%= lang==='ar' ? 'قواعد، مفردات، فهم المقروء' : 'Grammar, vocabulary, reading comprehension' %></p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="schedule-day" data-aos="fade-up" data-aos-delay="300">
-            <div class="day-header">
-              <span class="material-icons">event</span>
-              <h3><%= lang==='ar' ? 'السبت' : 'Saturday' %></h3>
-            </div>
-            <div class="day-content">
-              <div class="schedule-card">
-                <span class="time-badge">10:00 AM - 12:30 PM</span>
-                <h4>Math</h4>
-                <p><%= lang==='ar' ? 'جبر، هندسة، حساب مثلثات' : 'Algebra, geometry, trigonometry' %></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="syllabus" class="syllabus-section" data-aos="fade-up">
-      <div class="section-header latex-style">
-        <div class="theorem-box">
-          <div class="theorem-title">
-            <%= lang==='ar' ? 'المنهج التفصيلي' : 'Detailed Syllabus' %>
-          </div>
-          <p class="theorem-content">
-            <%= lang==='ar' ? 
-              'منهج شامل ومنظم يغطي جميع جوانب اختبارات القبول بمدارس STEM' : 
-              'A comprehensive and organized curriculum covering all aspects of STEM school entrance exams' 
-            %>
-          </p>
-        </div>
-      </div>
-
-      <div class="syllabus-container">
-        <!-- Mathematics Syllabus -->
-        <div class="syllabus-subject" data-aos="fade-up">
-          <div class="subject-header">
-            <div class="subject-icon">
-              <span class="material-icons">calculate</span>
-            </div>
-            <h3><%= lang==='ar' ? 'الرياضيات' : 'Mathematics' %></h3>
-            <span class="subject-badge"><%= lang==='ar' ? '12 أسبوع' : '12 Weeks' %></span>
-          </div>
-          <div class="subject-content">
-            <div class="topic-grid">
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'الجبر' : 'Algebra' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'المعادلات الخطية والتربيعية' : 'Linear and quadratic equations' %></li>
-                  <li><%= lang==='ar' ? 'الدوال وخصائصها' : 'Functions and their properties' %></li>
-                  <li><%= lang==='ar' ? 'المتباينات' : 'Inequalities' %></li>
-                  <li><%= lang==='ar' ? 'الأسس واللوغاريتمات' : 'Exponents and logarithms' %></li>
-                </ul>
-              </div>
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'الهندسة' : 'Geometry' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'المضلعات والدوائر' : 'Polygons and circles' %></li>
-                  <li><%= lang==='ar' ? 'الهندسة الفراغية' : 'Solid geometry' %></li>
-                  <li><%= lang==='ar' ? 'التحويلات الهندسية' : 'Geometric transformations' %></li>
-                  <li><%= lang==='ar' ? 'الإحداثيات والمتجهات' : 'Coordinates and vectors' %></li>
-                </ul>
-              </div>
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'حساب المثلثات' : 'Trigonometry' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'النسب المثلثية' : 'Trigonometric ratios' %></li>
-                  <li><%= lang==='ar' ? 'المتطابقات المثلثية' : 'Trigonometric identities' %></li>
-                  <li><%= lang==='ar' ? 'قانون الجيب والجيب تمام' : 'Law of sines and cosines' %></li>
-                </ul>
-              </div>
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'الإحصاء والاحتمالات' : 'Statistics & Probability' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'التوزيعات الإحصائية' : 'Statistical distributions' %></li>
-                  <li><%= lang==='ar' ? 'الاحتمالات المشروطة' : 'Conditional probability' %></li>
-                  <li><%= lang==='ar' ? 'التحليل الإحصائي' : 'Statistical analysis' %></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Science Syllabus -->
-        <div class="syllabus-subject" data-aos="fade-up" data-aos-delay="100">
-          <div class="subject-header">
-            <div class="subject-icon">
-              <span class="material-icons">science</span>
-            </div>
-            <h3><%= lang==='ar' ? 'العلوم' : 'Science' %></h3>
-            <span class="subject-badge"><%= lang==='ar' ? '10 أسابيع' : '10 Weeks' %></span>
-          </div>
-          <div class="subject-content">
-            <div class="topic-grid">
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'الفيزياء' : 'Physics' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'الميكانيكا والحركة' : 'Mechanics and motion' %></li>
-                  <li><%= lang==='ar' ? 'الكهرباء والمغناطيسية' : 'Electricity and magnetism' %></li>
-                  <li><%= lang==='ar' ? 'الضوء والأمواج' : 'Light and waves' %></li>
-                  <li><%= lang==='ar' ? 'الطاقة والشغل' : 'Energy and work' %></li>
-                </ul>
-              </div>
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'الكيمياء' : 'Chemistry' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'التفاعلات الكيميائية' : 'Chemical reactions' %></li>
-                  <li><%= lang==='ar' ? 'الجدول الدوري' : 'Periodic table' %></li>
-                  <li><%= lang==='ar' ? 'الروابط الكيميائية' : 'Chemical bonds' %></li>
-                  <li><%= lang==='ar' ? 'المحاليل والأحماض والقواعد' : 'Solutions, acids and bases' %></li>
-                </ul>
-              </div>
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'الأحياء' : 'Biology' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'تركيب الخلية ووظائفها' : 'Cell structure and function' %></li>
-                  <li><%= lang==='ar' ? 'الوراثة والتطور' : 'Genetics and evolution' %></li>
-                  <li><%= lang==='ar' ? 'البيئة والنظم البيئية' : 'Ecology and ecosystems' %></li>
-                  <li><%= lang==='ar' ? 'جسم الإنسان وأجهزته' : 'Human body systems' %></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- English Syllabus -->
-        <div class="syllabus-subject" data-aos="fade-up" data-aos-delay="200">
-          <div class="subject-header">
-            <div class="subject-icon">
-              <span class="material-icons">translate</span>
-            </div>
-            <h3><%= lang==='ar' ? 'اللغة الإنجليزية' : 'English Language' %></h3>
-            <span class="subject-badge"><%= lang==='ar' ? '8 أسابيع' : '8 Weeks' %></span>
-          </div>
-          <div class="subject-content">
-            <div class="topic-grid">
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'القواعد' : 'Grammar' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'الأزمنة والأفعال' : 'Tenses and verbs' %></li>
-                  <li><%= lang==='ar' ? 'الجمل الشرطية' : 'Conditional sentences' %></li>
-                  <li><%= lang==='ar' ? 'الأصوات المباشرة وغير المباشرة' : 'Direct and indirect speech' %></li>
-                </ul>
-              </div>
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'المفردات' : 'Vocabulary' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'المصطلحات العلمية' : 'Scientific terminology' %></li>
-                  <li><%= lang==='ar' ? 'المرادفات والأضداد' : 'Synonyms and antonyms' %></li>
-                  <li><%= lang==='ar' ? 'التعبيرات الاصطلاحية' : 'Idiomatic expressions' %></li>
-                </ul>
-              </div>
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'فهم المقروء' : 'Reading Comprehension' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'النصوص العلمية' : 'Scientific texts' %></li>
-                  <li><%= lang==='ar' ? 'التحليل النقدي' : 'Critical analysis' %></li>
-                  <li><%= lang==='ar' ? 'استخراج المعلومات' : 'Information extraction' %></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- IQ & Aptitude Tests -->
-        <div class="syllabus-subject" data-aos="fade-up" data-aos-delay="300">
-          <div class="subject-header">
-            <div class="subject-icon">
-              <span class="material-icons">psychology</span>
-            </div>
-            <h3><%= lang==='ar' ? 'اختبارات الذكاء والقدرات' : 'IQ & Aptitude Tests' %></h3>
-            <span class="subject-badge"><%= lang==='ar' ? '6 أسابيع' : '6 Weeks' %></span>
-          </div>
-          <div class="subject-content">
-            <div class="topic-grid">
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'التفكير المنطقي' : 'Logical Reasoning' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'الأنماط والتسلسلات' : 'Patterns and sequences' %></li>
-                  <li><%= lang==='ar' ? 'التفكير النقدي' : 'Critical thinking' %></li>
-                  <li><%= lang==='ar' ? 'حل المشكلات' : 'Problem solving' %></li>
-                </ul>
-              </div>
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'التفكير المكاني' : 'Spatial Reasoning' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'الأشكال ثلاثية الأبعاد' : '3D shapes' %></li>
-                  <li><%= lang==='ar' ? 'التدوير والطي' : 'Rotation and folding' %></li>
-                  <li><%= lang==='ar' ? 'التصور المكاني' : 'Spatial visualization' %></li>
-                </ul>
-              </div>
-              <div class="topic-item">
-                <h4><%= lang==='ar' ? 'التفكير العددي' : 'Numerical Reasoning' %></h4>
-                <ul>
-                  <li><%= lang==='ar' ? 'السلاسل العددية' : 'Number series' %></li>
-                  <li><%= lang==='ar' ? 'العمليات الحسابية السريعة' : 'Quick arithmetic' %></li>
-                  <li><%= lang==='ar' ? 'المسائل اللفظية' : 'Word problems' %></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Assessment Methods -->
-        <div class="assessment-section" data-aos="fade-up" data-aos-delay="400">
-          <div class="theorem-box method-box">
-            <div class="theorem-title">
-              <%= lang==='ar' ? 'طرق التقييم' : 'Assessment Methods' %>
-            </div>
-            <div class="assessment-grid">
-              <div class="assessment-item">
-                <div class="assessment-icon">
-                  <span class="material-icons">quiz</span>
-                </div>
-                <h4><%= lang==='ar' ? 'اختبارات أسبوعية' : 'Weekly Tests' %></h4>
-                <p><%= lang==='ar' ? 'تقييم مستمر لقياس التقدم' : 'Continuous assessment to measure progress' %></p>
-              </div>
-              <div class="assessment-item">
-                <div class="assessment-icon">
-                  <span class="material-icons">assignment</span>
-                </div>
-                <h4><%= lang==='ar' ? 'محاكاة الاختبار' : 'Mock Exams' %></h4>
-                <p><%= lang==='ar' ? 'تجربة واقعية لليوم الفعلي' : 'Realistic experience for the actual day' %></p>
-              </div>
-              <div class="assessment-item">
-                <div class="assessment-icon">
-                  <span class="material-icons">analytics</span>
-                </div>
-                <h4><%= lang==='ar' ? 'تقارير مفصلة' : 'Detailed Reports' %></h4>
-                <p><%= lang==='ar' ? 'تحليل شامل للأداء ونقاط التحسين' : 'Comprehensive performance analysis and improvement points' %></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section class="faq-section" data-aos="fade-up">
-      <div class="section-header latex-style">
-        <div class="theorem-box example-box">
-          <div class="theorem-title">
-            <%= lang==='ar' ? 'أسئلة شائعة' : 'Frequently Asked Questions' %>
-          </div>
-          <div class="faq-container">
-            <div class="faq-item" data-aos="fade-up">
-              <div class="faq-question">
-                <span class="material-icons">help</span>
-                <h4><%= lang==='ar' ? 'كيف يمكنني الانضمام؟' : 'How do I join?' %></h4>
-                <span class="material-icons toggle-icon">expand_more</span>
-              </div>
-              <div class="faq-answer">
-                <p><%= lang==='ar' ? 'يمكنك التسجيل من خلال صفحة التسجيل على موقعنا الإلكتروني أو التواصل معنا مباشرة عبر البريد الإلكتروني. سيتم إجراء مقابلة قصيرة لتحديد مستواك ثم إلحاقك بالمجموعة المناسبة.' : 'You can register through our website\'s registration page or contact us directly via email. A short interview will be conducted to determine your level, and then you will be assigned to the appropriate group.' %></p>
-              </div>
-            </div>
-            
-            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="faq-question">
-                <span class="material-icons">monetization_on</span>
-                <h4><%= lang==='ar' ? 'هل البرنامج مجاني؟' : 'Is the program free?' %></h4>
-                <span class="material-icons toggle-icon">expand_more</span>
-              </div>
-              <div class="faq-answer">
-                <p><%= lang==='ar' ? 'نعم، برنامجنا مجاني تمامًا. نحن منظمة غير ربحية تهدف إلى دعم الطلاب الموهوبين بغض النظر عن خلفيتهم الاجتماعية أو الاقتصادية.' : 'Yes, our program is completely free. We are a non-profit organization aimed at supporting talented students regardless of their social or economic background.' %></p>
-              </div>
-            </div>
-            
-            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-              <div class="faq-question">
-                <span class="material-icons">schedule</span>
-                <h4><%= lang==='ar' ? 'كم تستغرق مدة البرنامج؟' : 'How long is the program?' %></h4>
-                <span class="material-icons toggle-icon">expand_more</span>
-              </div>
-              <div class="faq-answer">
-                <p><%= lang==='ar' ? 'يستمر البرنامج لمدة 6 أشهر، بدءًا من شهر ديسمبر وحتى موعد الاختبارات في مايو، مع مراعاة الإجازات المدرسية.' : 'The program runs for 6 months, starting from December until the exams in May, taking into account school holidays.' %></p>
-              </div>
-            </div>
-            
-            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-              <div class="faq-question">
-                <span class="material-icons">device_hub</span>
-                <h4><%= lang==='ar' ? 'هل البرنامج عبر الإنترنت أم وجهاً لوجه؟' : 'Is the program online or in-person?' %></h4>
-                <span class="material-icons toggle-icon">expand_more</span>
-              </div>
-              <div class="faq-answer">
-                <p><%= lang==='ar' ? 'نقدم كلا الخيارين. تُقام الجلسات وجهاً لوجه في مقرنا الرئيسي بالقاهرة، وتتوفر أيضاً جلسات عبر الإنترنت للطلاب من المحافظات الأخرى.' : 'We offer both options. In-person sessions are held at our main headquarters in Cairo, and online sessions are also available for students from other governorates.' %></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="registration-section" data-aos="fade-up">
-      <div class="theorem-box tipbox">
-        <div class="theorem-title">
-          <%= lang==='ar' ? 'سجل الآن' : 'Register Now' %>
-        </div>
-        <div class="registration-content">
-          <p>
-            <%= lang==='ar' ? 
-              'التسجيل متاح الآن للدفعة الجديدة. عدد المقاعد محدود، سارع بالتسجيل لضمان مقعدك!' : 
-              'Registration is now open for the new cohort. Seats are limited, hurry up to secure yours!' 
-            %>
-          </p>
-          <div class="cta-buttons">
-            <a href="/contact?lang=<%= lang %>" class="btn btn-primary">
-              <i class="material-icons">app_registration</i>
-              <%= lang==='ar' ? 'سجل الآن' : 'Register Now' %>
+          <div class="hero-actions">
+            <a href="#components" class="btn btn-primary">
+              <i class="material-icons">list_alt</i>
+              <%= lang==='ar' ? 'مكونات البرنامج' : 'Program Components' %>
+            </a>
+            <a href="#schedule" class="btn btn-secondary">
+              <i class="material-icons">calendar_today</i>
+              <%= lang==='ar' ? 'الجدول الزمني' : 'Schedule' %>
             </a>
           </div>
         </div>
       </div>
     </section>
-  </div>
-  <%- include('partials/footer') %>
-  
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize AOS
-      AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-      });
-      
-    });
-  </script>
-  <script src="/js/main.js"></script>
+
+    <div class="container">
+      <div class="latex-box info-box" data-aos="fade-up">
+        <div class="box-header">
+          <i class="material-icons">info</i>
+          <h2>
+            <%= lang==='ar' ? 'عن البرنامج' : 'About the Program' %>
+          </h2>
+        </div>
+        <div class="box-content">
+          <p>
+            <%= lang==='ar'
+              ? 'برنامج STEM Mentorship هو برنامج متكامل مصمم خصيصاً لإعداد الطلاب لاختبارات القبول في مدارس STEM. يجمع البرنامج بين التدريب العملي، والدروس النظرية، والممارسة المستمرة تحت إشراف موجهين متخصصين في جميع المواد.'
+              : 'The STEM Mentorship program is an integrated program specifically designed to prepare students for STEM school entrance exams. The program combines hands-on training, theoretical lessons, and continuous practice under the supervision of specialized mentors in all subjects.'
+              %>
+          </p>
+        </div>
+      </div>
+
+      <section id="components" class="program-components-section" data-aos="fade-up">
+        <div class="section-header latex-style">
+          <div class="theorem-box">
+            <div class="theorem-title">
+              <%= lang==='ar' ? 'مكونات البرنامج' : 'Program Components' %>
+            </div>
+            <p class="theorem-content">
+              <%= lang==='ar' ? 'برنامجنا يتكون من عناصر متكاملة تضمن تجربة تعليمية شاملة'
+                : 'Our program consists of integrated elements ensuring a comprehensive learning experience' %>
+            </p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card conceptbox" data-aos="fade-up">
+            <div class="stat-icon">
+              <span class="material-icons">assignment</span>
+            </div>
+            <h3>
+              <%= lang==='ar' ? 'نماذج أسبوعية' : 'Weekly Forms' %>
+            </h3>
+            <p>
+              <%= lang==='ar' ? 'محاكاة واقعية للاختبار لتعزيز ثقتك بنفسك وتقييم مستواك.'
+                : 'Realistic test simulations to build your confidence and assess your level.' %>
+            </p>
+            <div class="stat-detail">
+              <%= lang==='ar' ? 'إعداد مستمر على نمط أسئلة الاختبار الحقيقي'
+                : 'Continuous preparation based on real exam question patterns' %>
+            </div>
+          </div>
+
+          <div class="stat-card conceptbox" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-icon">
+              <span class="material-icons">video_library</span>
+            </div>
+            <h3>
+              <%= lang==='ar' ? 'مقاطع تعليمية' : 'Educational Clips' %>
+            </h3>
+            <p>
+              <%= lang==='ar' ? 'شرح مبسط للمفاهيم المعقدة بطريقة سهلة الفهم.'
+                : 'Simplified explanations of complex concepts in an easy-to-understand way.' %>
+            </p>
+            <div class="stat-detail">
+              <%= lang==='ar' ? 'فيديوهات قصيرة ومركزة يمكن مشاهدتها في أي وقت'
+                : 'Short, focused videos that can be watched anytime' %>
+            </div>
+          </div>
+
+          <div class="stat-card conceptbox" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-icon">
+              <span class="material-icons">groups</span>
+            </div>
+            <h3>
+              <%= lang==='ar' ? 'جلسات تفاعلية' : 'Interactive Sessions' %>
+            </h3>
+            <p>
+              <%= lang==='ar' ? 'تفاعل مباشر مع الموجهين للإجابة على استفساراتك.'
+                : 'Direct interaction with mentors to answer your questions.' %>
+            </p>
+            <div class="stat-detail">
+              <%= lang==='ar' ? 'فرصة للمناقشة وطرح الأسئلة وتوضيح النقاط الصعبة'
+                : 'Opportunity for discussion, asking questions and clarifying difficult points' %>
+            </div>
+          </div>
+
+          <div class="stat-card conceptbox" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-icon">
+              <span class="material-icons">auto_stories</span>
+            </div>
+            <h3>
+              <%= lang==='ar' ? 'مواد تعليمية' : 'Educational Materials' %>
+            </h3>
+            <p>
+              <%= lang==='ar' ? 'ملخصات شاملة وأوراق عمل لكل موضوع من موضوعات الاختبار.'
+                : 'Comprehensive summaries and worksheets for each exam topic.' %>
+            </p>
+            <div class="stat-detail">
+              <%= lang==='ar' ? 'موارد عالية الجودة معدة خصيصاً لاختبارات STEM'
+                : 'High-quality resources specially prepared for STEM exams' %>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule" class="schedule-section" data-aos="fade-up">
+        <div class="theorem-box solution-box">
+          <div class="theorem-title">
+            <%= lang==='ar' ? 'الجدول الأسبوعي' : 'Weekly Schedule' %>
+          </div>
+
+          <div class="schedule-grid">
+            <div class="schedule-day" data-aos="fade-up">
+              <div class="day-header">
+                <span class="material-icons">event</span>
+                <h3>
+                  <%= lang==='ar' ? 'الأحد' : 'Sunday' %>
+                </h3>
+              </div>
+              <div class="day-content">
+                <div class="schedule-card">
+                  <span class="time-badge">4:00 - 6:00 PM</span>
+                  <h4>Math</h4>
+                  <p>
+                    <%= lang==='ar' ? 'جبر، هندسة، حساب مثلثات' : 'Algebra, geometry, trigonometry' %>
+
+                  </p>
+                </div>
+                <br><br>
+                <div class="schedule-card">
+                  <span class="time-badge">4:00 - 6:00 PM</span>
+                  <h4>Science</h4>
+                  <p>
+                    <%= lang==='ar' ? 'فيزياء، كيمياء، أحياء' : 'Physics, Chemistry, Biology' %>
+
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="schedule-day" data-aos="fade-up">
+              <div class="day-header">
+                <span class="material-icons">event</span>
+                <h3>
+                  <%= lang==='ar' ? 'الاتنين' : 'Monday' %>
+                </h3>
+              </div>
+              <div class="day-content">
+                <div class="schedule-card">
+                  <span class="time-badge">4:00 - 6:00 PM</span>
+                  <h4>IQ</h4>
+                  <p>
+                    <%= lang==='ar' ? 'تدريبات على اختبارات الذكاء والتفكير المنطقي'
+                      : 'IQ and logical thinking exercises' %>
+
+                  </p>
+                </div>
+                <br><br>
+                <div class="schedule-card">
+                  <span class="time-badge">4:00 - 6:00 PM</span>
+                  <h4>English</h4>
+                  <p>
+                    <%= lang==='ar' ? 'قواعد، مفردات، فهم المقروء' : 'Grammar, vocabulary, reading comprehension' %>
+
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="schedule-day" data-aos="fade-up" data-aos-delay="300">
+              <div class="day-header">
+                <span class="material-icons">event</span>
+                <h3>
+                  <%= lang==='ar' ? 'الثلثاء' : 'Tuesday' %>
+                </h3>
+              </div>
+              <div class="day-content">
+                <div class="schedule-card">
+                  <span class="time-badge"></span>
+                  <h4>Break</h4>
+
+                </div>
+              </div>
+
+
+            </div>
+
+
+
+
+            <div class="schedule-day" data-aos="fade-up">
+              <div class="day-header">
+                <span class="material-icons">event</span>
+                <h3>
+                  <%= lang==='ar' ? 'الأربعاء' : 'Wednesday' %>
+                </h3>
+              </div>
+              <div class="day-content">
+                <div class="schedule-card">
+                  <span class="time-badge">4:00 - 6:00 PM</span>
+                  <h4>Math</h4>
+                  <p>
+                    <%= lang==='ar' ? 'جبر، هندسة، حساب مثلثات' : 'Algebra, geometry, trigonometry' %>
+
+                  </p>
+                </div>
+                <br><br>
+                <div class="schedule-card">
+                  <span class="time-badge">4:00 - 6:00 PM</span>
+                  <h4>Science</h4>
+                  <p>
+                    <%= lang==='ar' ? 'فيزياء، كيمياء، أحياء' : 'Physics, Chemistry, Biology' %>
+
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="schedule-day" data-aos="fade-up">
+              <div class="day-header">
+                <span class="material-icons">event</span>
+                <h3>
+                  <%= lang==='ar' ? 'الخميس' : 'Thursday' %>
+                </h3>
+              </div>
+              <div class="day-content">
+                <div class="schedule-card">
+                  <span class="time-badge">4:00 - 6:00 PM</span>
+                  <h4>IQ</h4>
+                  <p>
+                    <%= lang==='ar' ? 'تدريبات على اختبارات الذكاء والتفكير المنطقي'
+                      : 'IQ and logical thinking exercises' %>
+
+                  </p>
+                </div>
+                <br><br>
+                <div class="schedule-card">
+                  <span class="time-badge">4:00 - 6:00 PM</span>
+                  <h4>English</h4>
+                  <p>
+                    <%= lang==='ar' ? 'قواعد، مفردات، فهم المقروء' : 'Grammar, vocabulary, reading comprehension' %>
+
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="schedule-day" data-aos="fade-up" data-aos-delay="300">
+              <div class="day-header">
+                <span class="material-icons">event</span>
+                <h3>
+                  <%= lang==='ar' ? 'الجمعه' : 'Friday' %>
+                </h3>
+              </div>
+              <div class="day-content">
+                <div class="schedule-card">
+                  <span class="time-badge">5:00 - 6:00 PM</span>
+                  <h4>Exam</h4>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="schedule-day" data-aos="fade-up" data-aos-delay="300">
+              <div class="day-header">
+                <span class="material-icons">event</span>
+                <h3>
+                  <%= lang==='ar' ? 'السبت' : 'Saturday' %>
+                </h3>
+              </div>
+              <div class="day-content">
+                <div class="schedule-card">
+                  <span class="time-badge"></span>
+                  <h4>Break</h4>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </section>
+
+      <section id="syllabus" class="syllabus-section" data-aos="fade-up">
+        <div class="section-header latex-style">
+          <div class="theorem-box">
+            <div class="theorem-title">
+              <%= lang==='ar' ? 'المنهج التفصيلي' : 'Detailed Syllabus' %>
+            </div>
+            <p class="theorem-content">
+              <%= lang==='ar' ? 'منهج شامل ومنظم يغطي جميع جوانب اختبارات القبول بمدارس STEM'
+                : 'A comprehensive and organized curriculum covering all aspects of STEM school entrance exams' %>
+            </p>
+          </div>
+        </div>
+
+        <div class="syllabus-container">
+          <!-- Mathematics Syllabus -->
+          <div class="syllabus-subject" data-aos="fade-up">
+            <div class="subject-header">
+              <div class="subject-icon">
+                <span class="material-icons">calculate</span>
+              </div>
+              <h3>
+                <%= lang==='ar' ? 'الرياضيات' : 'Mathematics' %>
+              </h3>
+              <span class="subject-badge">
+                <%= lang==='ar' ? '6 أسبوع' : '6 Weeks' %>
+              </span>
+            </div>
+            <div class="subject-content">
+              <div class="topic-grid">
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'الجبر' : 'Algebra' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'المعادلات الخطية والتربيعية' : 'Linear and quadratic equations' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الدوال وخصائصها' : 'Functions and their properties' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'المتباينات' : 'Inequalities' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الأسس واللوغاريتمات' : 'Exponents and logarithms' %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'الهندسة' : 'Geometry' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'المضلعات والدوائر' : 'Polygons and circles' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الهندسة الفراغية' : 'Solid geometry' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'التحويلات الهندسية' : 'Geometric transformations' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الإحداثيات والمتجهات' : 'Coordinates and vectors' %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'حساب المثلثات' : 'Trigonometry' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'النسب المثلثية' : 'Trigonometric ratios' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'المتطابقات المثلثية' : 'Trigonometric identities' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'قانون الجيب والجيب تمام' : 'Law of sines and cosines' %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'الإحصاء والاحتمالات' : 'Statistics & Probability' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'التوزيعات الإحصائية' : 'Statistical distributions' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الاحتمالات المشروطة' : 'Conditional probability' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'التحليل الإحصائي' : 'Statistical analysis' %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Science Syllabus -->
+          <div class="syllabus-subject" data-aos="fade-up" data-aos-delay="100">
+            <div class="subject-header">
+              <div class="subject-icon">
+                <span class="material-icons">science</span>
+              </div>
+              <h3>
+                <%= lang==='ar' ? 'العلوم' : 'Science' %>
+              </h3>
+              <span class="subject-badge">
+                <%= lang==='ar' ? '6 أسابيع' : '6 Weeks' %>
+              </span>
+            </div>
+            <div class="subject-content">
+              <div class="topic-grid">
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'الفيزياء' : 'Physics' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'الميكانيكا والحركة' : 'Mechanics and motion' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الكهرباء والمغناطيسية' : 'Electricity and magnetism' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الضوء والأمواج' : 'Light and waves' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الطاقة والشغل' : 'Energy and work' %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'الكيمياء' : 'Chemistry' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'التفاعلات الكيميائية' : 'Chemical reactions' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الجدول الدوري' : 'Periodic table' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الروابط الكيميائية' : 'Chemical bonds' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'المحاليل والأحماض والقواعد' : 'Solutions, acids and bases' %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'الأحياء' : 'Biology' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'تركيب الخلية ووظائفها' : 'Cell structure and function' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الوراثة والتطور' : 'Genetics and evolution' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'البيئة والنظم البيئية' : 'Ecology and ecosystems' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'جسم الإنسان وأجهزته' : 'Human body systems' %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- English Syllabus -->
+          <div class="syllabus-subject" data-aos="fade-up" data-aos-delay="200">
+            <div class="subject-header">
+              <div class="subject-icon">
+                <span class="material-icons">translate</span>
+              </div>
+              <h3>
+                <%= lang==='ar' ? 'اللغة الإنجليزية' : 'English Language' %>
+              </h3>
+              <span class="subject-badge">
+                <%= lang==='ar' ? '6 أسابيع' : '6 Weeks' %>
+              </span>
+            </div>
+            <div class="subject-content">
+              <div class="topic-grid">
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'القواعد' : 'Grammar' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'الأزمنة والأفعال' : 'Tenses and verbs' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الجمل الشرطية' : 'Conditional sentences' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'الأصوات المباشرة وغير المباشرة' : 'Direct and indirect speech' %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'المفردات' : 'Vocabulary' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'المصطلحات العلمية' : 'Scientific terminology' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'المرادفات والأضداد' : 'Synonyms and antonyms' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'التعبيرات الاصطلاحية' : 'Idiomatic expressions' %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'فهم المقروء' : 'Reading Comprehension' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'النصوص العلمية' : 'Scientific texts' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'التحليل النقدي' : 'Critical analysis' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'استخراج المعلومات' : 'Information extraction' %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- IQ & Aptitude Tests -->
+          <div class="syllabus-subject" data-aos="fade-up" data-aos-delay="300">
+            <div class="subject-header">
+              <div class="subject-icon">
+                <span class="material-icons">psychology</span>
+              </div>
+              <h3>
+                <%= lang==='ar' ? 'اختبارات الذكاء والقدرات' : 'IQ & Aptitude Tests' %>
+              </h3>
+              <span class="subject-badge">
+                <%= lang==='ar' ? '5 أسابيع' : '5 Weeks' %>
+              </span>
+            </div>
+            <div class="subject-content">
+              <div class="topic-grid">
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'التفكير المنطقي' : 'Logical Reasoning' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'الأنماط والتسلسلات' : 'Patterns and sequences' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'التفكير النقدي' : 'Critical thinking' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'حل المشكلات' : 'Problem solving' %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'التفكير المكاني' : 'Spatial Reasoning' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'الأشكال ثلاثية الأبعاد' : '3D shapes' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'التدوير والطي' : 'Rotation and folding' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'التصور المكاني' : 'Spatial visualization' %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="topic-item">
+                  <h4>
+                    <%= lang==='ar' ? 'التفكير العددي' : 'Numerical Reasoning' %>
+                  </h4>
+                  <ul>
+                    <li>
+                      <%= lang==='ar' ? 'السلاسل العددية' : 'Number series' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'العمليات الحسابية السريعة' : 'Quick arithmetic' %>
+                    </li>
+                    <li>
+                      <%= lang==='ar' ? 'المسائل اللفظية' : 'Word problems' %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Assessment Methods -->
+          <div class="assessment-section" data-aos="fade-up" data-aos-delay="400">
+            <div class="theorem-box method-box">
+              <div class="theorem-title">
+                <%= lang==='ar' ? 'طرق التقييم' : 'Assessment Methods' %>
+              </div>
+              <div class="assessment-grid">
+                <div class="assessment-item">
+                  <div class="assessment-icon">
+                    <span class="material-icons">quiz</span>
+                  </div>
+                  <h4>
+                    <%= lang==='ar' ? 'اختبارات أسبوعية' : 'Weekly Tests' %>
+                  </h4>
+                  <p>
+                    <%= lang==='ar' ? 'تقييم مستمر لقياس التقدم' : 'Continuous assessment to measure progress' %>
+                  </p>
+                </div>
+                <div class="assessment-item">
+                  <div class="assessment-icon">
+                    <span class="material-icons">assignment</span>
+                  </div>
+                  <h4>
+                    <%= lang==='ar' ? 'محاكاة الاختبار' : 'Mock Exams' %>
+                  </h4>
+                  <p>
+                    <%= lang==='ar' ? 'تجربة واقعية لليوم الفعلي' : 'Realistic experience for the actual day' %>
+                  </p>
+                </div>
+                <div class="assessment-item">
+                  <div class="assessment-icon">
+                    <span class="material-icons">analytics</span>
+                  </div>
+                  <h4>
+                    <%= lang==='ar' ? 'تقارير مفصلة' : 'Detailed Reports' %>
+                  </h4>
+                  <p>
+                    <%= lang==='ar' ? 'تحليل شامل للأداء ونقاط التحسين'
+                      : 'Comprehensive performance analysis and improvement points' %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section" data-aos="fade-up">
+        <div class="section-header latex-style">
+          <div class="theorem-box example-box">
+            <div class="theorem-title">
+              <%= lang==='ar' ? 'أسئلة شائعة' : 'Frequently Asked Questions' %>
+            </div>
+            <div class="faq-container">
+              <div class="faq-item" data-aos="fade-up">
+                <div class="faq-question">
+                  <span class="material-icons">help</span>
+                  <h4>
+                    <%= lang==='ar' ? 'كيف يمكنني الانضمام؟' : 'How do I join?' %>
+                  </h4>
+                  <span class="material-icons toggle-icon">expand_more</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    <%= lang==='ar'
+                      ? 'يمكنك التسجيل من خلال صفحة التسجيل على موقعنا الإلكتروني أو التواصل معنا مباشرة عبر البريد الإلكتروني او أي طريقه تواصل .'
+                      : 'You can register through the registration page on our website or contact us directly via email or any communication method.'
+                      %>
+                  </p>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                  <div class="faq-question">
+                    <span class="material-icons">monetization_on</span>
+                    <h4>
+                      <%= lang==='ar' ? 'هل البرنامج مجاني؟' : 'Is the program free?' %>
+                    </h4>
+                    <span class="material-icons toggle-icon">expand_more</span>
+                  </div>
+                  <div class="faq-answer">
+                    <p>
+                      <%= lang==='ar'
+                        ? 'نعم، برنامجنا مجاني تمامًا. نحن منظمة غير ربحية تهدف إلى دعم الطلاب الموهوبين بغض النظر عن خلفيتهم الاجتماعية أو الاقتصادية.'
+                        : 'Yes, our program is completely free. We are a non-profit organization aimed at supporting talented students regardless of their social or economic background.'
+                        %>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                  <div class="faq-question">
+                    <span class="material-icons">schedule</span>
+                    <h4>
+                      <%= lang==='ar' ? 'كم تستغرق مدة البرنامج؟' : 'How long is the program?' %>
+                    </h4>
+                    <span class="material-icons toggle-icon">expand_more</span>
+                  </div>
+                  <div class="faq-answer">
+                    <p>
+                      <%= lang==='ar' ? 'يستمر البرنامج لمدة 2 أشهر، بدءًا من شهر يونيو وحتى موعد الاختبارات في أغسطس.'
+                        : 'The program runs for 2 months, starting from june until the exams in August.' %>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                  <div class="faq-question">
+                    <span class="material-icons">device_hub</span>
+                    <h4>
+                      <%= lang==='ar' ? 'هل البرنامج عبر الإنترنت أم وجهاً لوجه؟'
+                        : 'Is the program online or in-person?' %>
+                    </h4>
+                    <span class="material-icons toggle-icon">expand_more</span>
+                  </div>
+                  <div class="faq-answer">
+                    <p>
+                      <%= lang==='ar' ? 'نقدم فقط جلسات عبر الانترنت.' : 'We offer only onilne session.' %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <section class="registration-section" data-aos="fade-up">
+        <div class="theorem-box tipbox">
+          <div class="theorem-title">
+            <%= lang==='ar' ? 'سجل الآن' : 'Register Now' %>
+          </div>
+          <div class="registration-content">
+            <p>
+              <%= lang==='ar' ? 'التسجيل متاح الآن للدفعة الجديدة. عدد المقاعد محدود، سارع بالتسجيل لضمان مقعدك!'
+                : 'Registration is now open for the new cohort. Seats are limited, hurry up to secure yours!' %>
+            </p>
+            <div class="cta-buttons">
+              <a href="https://forms.gle/ESWVaTA9VB6qzbXq5" target="_blank" class="btn btn-primary">
+                <i class="material-icons">app_registration</i>
+                <%= lang==='ar' ? 'سجل الآن' : 'Register Now' %>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <%- include('partials/footer') %>
+
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Initialize AOS
+          AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+          });
+
+        });
+      </script>
+      <script src="/js/main.js"></script>
 </body>
+
 </html>
