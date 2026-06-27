@@ -16,43 +16,27 @@ async function populateDatabase() {
     // Sample data
     const sampleFiles = [
       {
-        fileId: 'math-algebra-basics',
-        fileName: 'Algebra Basics.pdf',
+        fileId: 'math-guide',
+        fileName: 'Math Guide.pdf',
         subject: 'math',
-        category: 'Algebra',
-        filePath: 'resources/math/algebra-basics.pdf',
+        category: 'Math',
+        filePath: 'resources/math/Math_Guide.pdf',
         downloadCount: 0
       },
       {
-        fileId: 'math-geometry-fundamentals',
-        fileName: 'Geometry Fundamentals.pdf',
-        subject: 'math',
-        category: 'Geometry',
-        filePath: 'resources/math/geometry-fundamentals.pdf',
-        downloadCount: 0
-      },
-      {
-        fileId: 'science-chemistry-basics',
-        fileName: 'Chemistry Fundamentals.pdf',
+        fileId: 'science-guide',
+        fileName: 'Science Guide.pdf',
         subject: 'science',
-        category: 'Chemistry',
-        filePath: 'resources/science/chemistry-fundamentals.pdf',
+        category: 'Science',
+        filePath: 'resources/science/Science_Reference_Guide.pdf',
         downloadCount: 0
       },
       {
-        fileId: 'science-physics-mechanics',
-        fileName: 'Physics Mechanics.pdf',
-        subject: 'science',
-        category: 'Physics',
-        filePath: 'resources/science/physics-mechanics.pdf',
-        downloadCount: 0
-      },
-      {
-        fileId: 'english-grammar-guide',
-        fileName: 'English Grammar Guide.pdf',
+        fileId: 'english-guide',
+        fileName: 'English Guide.pdf',
         subject: 'english',
-        category: 'Grammar',
-        filePath: 'resources/english/grammar-guide.pdf',
+        category: 'English',
+        filePath: 'resources/english/English_1.pdf',
         downloadCount: 0
       },
       {
