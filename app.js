@@ -109,7 +109,7 @@ app.get('/favicon.ico', (req, res) => {
 });
 
 // Health check route with database status
-app.get('/health', (req, res) => {
+app.get('/health', async (req, res) => {
   const mongoConnected = await connectDB();
   res.json({
     status: 'ok',
@@ -168,10 +168,10 @@ app.get('/api/download/:fileId', async (req, res) => {
     res.setHeader('Cache-Control', 'no-cache, must-revalidate');
     res.setHeader('Pragma', 'no-cache');
     res.setHeader('Expires', '0');
-    
+
     // Add cross-browser download support
     res.setHeader('X-Download-Options', 'noopen'); // Prevents IE from opening PDFs in the browser
-    
+
     // Stream the file
     const fileStream = fs.createReadStream(filePath);
     fileStream.pipe(res);
@@ -335,7 +335,7 @@ app.get('/api/files/:subject', async (req, res) => {
 // Download tracking endpoint
 app.get('/api/track-resource', async (req, res) => {
   const { type, subject, topic, redirect } = req.query;
-  
+
   try {
 
     const mongoConnected = await connectDB();
@@ -343,10 +343,10 @@ app.get('/api/track-resource', async (req, res) => {
     if (mongoConnected) {
       // Build fileId to match our naming convention
       const fileId = `${subject}-${topic}`;
-      
+
       // Look up the file record
       let downloadRecord = await Download.findOne({ fileId });
-      
+
       if (downloadRecord) {
         // Increment the download count
         downloadRecord.downloadCount += 1;
@@ -365,12 +365,12 @@ app.get('/api/track-resource', async (req, res) => {
         });
         await downloadRecord.save();
       }
-      
+
       // Fetch the updated record to ensure we have the latest count
       // This handles race conditions if multiple downloads occur at once
       const freshRecord = await Download.findOne({ fileId });
       const downloadCount = freshRecord ? freshRecord.downloadCount : downloadRecord.downloadCount;
-      
+
       // Tracking data for response
       const trackingData = {
         timestamp: new Date().toISOString(),
@@ -380,19 +380,19 @@ app.get('/api/track-resource', async (req, res) => {
         fileId,
         downloadCount: downloadCount
       };
-      
+
       if (isDevelopment) {
         console.log('Download tracked:', trackingData);
       }
-      
+
       // Redirect to the actual resource if requested
       if (redirect) {
         res.redirect(redirect);
       } else {
-        res.status(200).json({ 
-          success: true, 
+        res.status(200).json({
+          success: true,
           message: 'Download tracked successfully',
-          data: trackingData 
+          data: trackingData
         });
       }
     } else {
@@ -400,10 +400,10 @@ app.get('/api/track-resource', async (req, res) => {
       if (isDevelopment) {
         console.log(`Resource downloaded: ${type} - ${subject}/${topic} (static mode)`);
       }
-      
+
       // Build fileId to match our naming convention
       const fileId = `${subject}-${topic}`;
-      
+
       // Tracking data for response
       const trackingData = {
         timestamp: new Date().toISOString(),
@@ -414,24 +414,24 @@ app.get('/api/track-resource', async (req, res) => {
         // In static mode, we don't have real counts
         downloadCount: 1
       };
-      
+
       // Redirect to the actual resource if requested
       if (redirect) {
         res.redirect(redirect);
       } else {
-        res.status(200).json({ 
-          success: true, 
+        res.status(200).json({
+          success: true,
           message: 'Download request logged (static mode)',
-          data: trackingData 
+          data: trackingData
         });
       }
     }
   } catch (error) {
     console.error('Error tracking download:', error);
-    
+
     // Still respond successfully to not interrupt the download
-    res.status(200).json({ 
-      success: false, 
+    res.status(200).json({
+      success: false,
       message: 'Error tracking download, but download will continue',
       error: error.message
     });
@@ -442,7 +442,7 @@ app.get('/api/track-resource', async (req, res) => {
 app.get('/api/resources', async (req, res) => {
   try {
     let resourceData;
-const mongoConnected = await connectDB();
+    const mongoConnected = await connectDB();
     if (mongoConnected) {
       // Fetch from MongoDB if available
       resourceData = await Download.find().lean();
