@@ -110,6 +110,7 @@ app.get('/favicon.ico', (req, res) => {
 
 // Health check route with database status
 app.get('/health', (req, res) => {
+  const mongoConnected = await connectDB();
   res.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
@@ -336,6 +337,8 @@ app.get('/api/track-resource', async (req, res) => {
   const { type, subject, topic, redirect } = req.query;
   
   try {
+
+    const mongoConnected = await connectDB();
     // Record download in database if connected
     if (mongoConnected) {
       // Build fileId to match our naming convention
@@ -439,7 +442,7 @@ app.get('/api/track-resource', async (req, res) => {
 app.get('/api/resources', async (req, res) => {
   try {
     let resourceData;
-
+const mongoConnected = await connectDB();
     if (mongoConnected) {
       // Fetch from MongoDB if available
       resourceData = await Download.find().lean();
