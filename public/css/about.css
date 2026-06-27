@@ -65,6 +65,9 @@
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
+
+
+
 /*team section styles*/
 .team-section {
   margin: 4rem 0;
@@ -179,6 +182,69 @@
   line-height: 1.6;
   font-size: 0.95rem;
   margin: 1rem 0 0 0;
+}
+
+.team-social-links {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+  margin-top: 1.25rem !important;
+  width: 100% !important;
+}
+
+.team-icon-link {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: var(--accent-cream) !important;
+  color: var(--primary-black) !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid transparent !important;
+}
+
+/* ستايل لتنظيم حجم الـ SVG جوا الدايرة */
+.team-icon-link svg {
+  width: 20px !important;
+  height: 20px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.team-icon-link:hover svg {
+  transform: scale(1.1);
+}
+
+.team-icon-link.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  color: #ffffff !important;
+}
+
+.team-icon-link.linkedin:hover {
+  background: #0077b5 !important;
+  color: #ffffff !important;
+}
+
+.team-icon-link.email:hover {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 480px) {
+  .team-social-links {
+    gap: 1rem !important;
+  }
+  .team-icon-link {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .team-icon-link svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
 }
 /*Acheivement */
 .achievements-section {

@@ -1,6 +1,14 @@
 <header>
   <div class="container header-container">
-    <img src="/images/logo.png" alt="Mentorship STEM Logo" class="logo" />
+    <a href="/">
+          <img src="/images/logo.png" alt="Mentorship STEM Logo" class="logo" />
+
+    </a>
+    <a href="https://forms.gle/ESWVaTA9VB6qzbXq5" target="_blank" class="header-reg-btn btn btn-primary">
+      <i class="material-icons">app_registration</i>
+      <%= lang==='ar' ? 'سجل الان' : 'Register Now' %>
+    </a>
+
     <%- include('./navbar', { lang: lang }) %>
     <button class="hamburger" aria-label="<%= lang==='ar' ? 'فتح قائمة التنقل' : 'Toggle navigation menu' %>" aria-expanded="false" aria-controls="navbar">
       <span aria-hidden="true"></span>

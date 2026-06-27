@@ -360,6 +360,53 @@ header {
   transform: scale(1.05);
 }
 
+
+
+.header-reg-btn {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+  padding: 0.6rem 1.5rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius-md, 8px) !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 1004 !important;
+}
+
+.header-reg-btn:hover {
+  background-color: var(--gradient-primary) !important;
+  color: #000000 !important;
+}
+
+@media (max-width: 768px) {
+  .header-reg-btn {
+    left: auto !important;
+    right: 70px !important;
+    transform: none !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-reg-btn {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.8rem !important;
+    right: 60px !important;
+  }
+}
+
+
+@media (max-width: 190px) {
+  .header-reg-btn {
+    visibility: hidden;
+  }
+}
 /* Navigation */
 .navbar {
   display: flex;
@@ -2336,6 +2383,14 @@ body.nav-open {
   background: linear-gradient(135deg, #1877f2 0%, #0d47a1 100%);
 }
 
+.social-link.youtube .social-icon {
+  background: linear-gradient(135deg, #FF0000 0%, #b30000 100%);
+}
+
+.social-link.whatsapp .social-icon {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+}
+
 .social-icon i {
   font-size: 24px;
   color: white;
@@ -2573,6 +2628,21 @@ footer .container {
   color: white;
   border-color: #1877f2;
 }
+
+.footer-social-link.youtube:hover {
+  background: #FF0000;
+  color: white;
+  border-color: #FF0000;
+}
+
+.footer-social-link.whatsapp:hover {
+  background: #25D366 !important;
+  color: white;
+  border-color: #25D366;
+}
+
+
+
 
 .footer-divider {
   color: rgba(255, 255, 255, 0.6);
