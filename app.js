@@ -14,20 +14,21 @@ const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = process.env.NODE_ENV === 'development';
 
 // Initialize MongoDB connection with error handling
-let mongoConnected = false;
-connectDB()
-  .then(() => {
-    mongoConnected = true;
-    if (isDevelopment) {
-      console.log('MongoDB connected successfully');
-    }
-  })
-  .catch((error) => {
-    console.error('MongoDB connection failed:', error.message);
-    if (isDevelopment) {
-      console.log('Running without database (static mode)');
-    }
-  });
+// =========== rm for vercel serverless=============
+// let mongoConnected = false;
+// connectDB()
+//   .then(() => {
+//     mongoConnected = true;
+//     if (isDevelopment) {
+//       console.log('MongoDB connected successfully');
+//     }
+//   })
+//   .catch((error) => {
+//     console.error('MongoDB connection failed:', error.message);
+//     if (isDevelopment) {
+//       console.log('Running without database (static mode)');
+//     }
+//   });
 
 // Enable compression
 app.use(compression());
@@ -126,6 +127,8 @@ app.get('/api/search', (req, res) => {
 app.get('/api/download/:fileId', async (req, res) => {
   try {
     const { fileId } = req.params;
+
+    const mongoConnected = await connectDB();
 
     // Check if database is connected
     if (!mongoConnected) {
